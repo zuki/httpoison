@@ -11,6 +11,11 @@ defmodule HTTPoison.Mixfile do
       elixir: "~> 1.2",
       name: "HTTPoison",
       description: @description,
+      compilers: Mix.compilers ++ [:po],
+      docs: [
+        main: "HttPoison",
+        formatter: Exgettext.HTML
+      ],
       package: package(),
       deps: deps(),
       source_url: "https://github.com/edgurgel/httpoison" ]
@@ -28,6 +33,7 @@ defmodule HTTPoison.Mixfile do
       {:meck, "~> 0.8.2", only: :test},
       {:earmark, "~> 1.0", only: :dev},
       {:ex_doc, "~> 0.14.3", only: :dev},
+      {:exgettext, github: "zuki/exgettext", only: :dev}
     ]
   end
 
